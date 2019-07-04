@@ -33,14 +33,14 @@ export const rateMovie = (id, rating) => ({
 
 export const fetchMovies = (searchString, pageNumber) => (dispatch) => {
     dispatch(requestMovies(searchString))
-    return fetch(`http://www.omdbapi.com/?s=${searchString}&type=movie&page=${pageNumber}&apikey=${API_KEY}`)
+    return fetch(`https://www.omdbapi.com/?s=${searchString}&type=movie&page=${pageNumber}&apikey=${API_KEY}`)
     .then(response => response.json())
     .then(json => dispatch(receiveMovies(json)))
 }
 
 export const fetchMovieDetails = (id) => (dispatch) => {
     dispatch(requestMovieDetails(id))
-    return fetch(`http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
+    return fetch(`https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`)
     .then(response => response.json())
     .then(json => dispatch(receiveMovieDetails(json)))
 }
