@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/movie-reviews/static/css/main.c13336f5.chunk.css",
+    "main.js": "/movie-reviews/static/js/main.c27154ad.chunk.js",
+    "main.js.map": "/movie-reviews/static/js/main.c27154ad.chunk.js.map",
+    "runtime~main.js": "/movie-reviews/static/js/runtime~main.c07caec6.js",
+    "runtime~main.js.map": "/movie-reviews/static/js/runtime~main.c07caec6.js.map",
+    "static/js/2.fb71b4a8.chunk.js": "/movie-reviews/static/js/2.fb71b4a8.chunk.js",
+    "static/js/2.fb71b4a8.chunk.js.map": "/movie-reviews/static/js/2.fb71b4a8.chunk.js.map",
+    "index.html": "/movie-reviews/index.html",
+    "precache-manifest.931287664b98b2a2611cdb6bac6880ab.js": "/movie-reviews/precache-manifest.931287664b98b2a2611cdb6bac6880ab.js",
+    "service-worker.js": "/movie-reviews/service-worker.js",
+    "static/css/main.c13336f5.chunk.css.map": "/movie-reviews/static/css/main.c13336f5.chunk.css.map"
+  }
+}
