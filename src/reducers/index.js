@@ -3,8 +3,9 @@ import { combineReducers } from 'redux';
 
 let movieListState = {
     searchString: "",
-    totalResults: 0,
     movies: [],
+    totalResults: 0,
+    currentPage: 0,
     isLoadingMovies: false,
     error: ""
 }
@@ -18,7 +19,8 @@ const movieList = (state = movieListState, action) => {
                     ...state,
                     isLoadingMovies: true,
                     movies: [],
-                    searchString: action.searchString
+                    searchString: action.searchString,
+                    currentPage: 0
                 }
             }
 
@@ -34,6 +36,7 @@ const movieList = (state = movieListState, action) => {
                     ...state,
                     totalResults: action.response.totalResults,
                     isLoadingMovies: false,
+                    currentPage: ++state.currentPage,
                     error: "",
                     movies: [
                         ...state.movies,

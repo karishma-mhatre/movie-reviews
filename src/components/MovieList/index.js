@@ -18,9 +18,10 @@ class MovieList extends React.Component {
         if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
             && this.props.movies.length !== +this.props.totalResults) {
                 console.log("onscroll inside");
-                this.props.dispatch(fetchMovies(this.props.searchString, ++this.currentPage));
+                let nextPage = this.props.currentPage + 1;
+                this.props.dispatch(fetchMovies(this.props.searchString, nextPage));
         }
-    }, 200)
+    }, 250)
 
     render() {
         let { movies, error, totalResults, isLoadingMovies } = this.props;
@@ -54,7 +55,8 @@ const mapStateToProps = (state) => ({
     movies: state.movieList.movies,
     totalResults: state.movieList.totalResults,
     error: state.movieList.error,
-    isLoadingMovies: state.movieList.isLoadingMovies
+    isLoadingMovies: state.movieList.isLoadingMovies,
+    currentPage: state.movieList.currentPage
 })
 
 export default connect(mapStateToProps)(MovieList);
