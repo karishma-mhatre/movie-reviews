@@ -18,4 +18,5 @@ Movie Reviews is a web app that enables to serach movies and rate them.
 ## Deployment
 
     Deployed on folowing link:
+    
     https://karishma-mhatre.github.io/movie-reviews/
