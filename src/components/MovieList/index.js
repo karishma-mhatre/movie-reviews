@@ -14,15 +14,17 @@ class MovieList extends React.Component {
     }
 
     handleScroll = debounce(() => {
+        console.log("onscroll");
         if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
             && this.props.movies.length !== +this.props.totalResults) {
+                console.log("onscroll inside");
                 this.props.dispatch(fetchMovies(this.props.searchString, ++this.currentPage));
         }
-    }, 250)
+    }, 200)
 
     render() {
         let { movies, error, totalResults, isLoadingMovies } = this.props;
-        console.log(movies);
+        console.log(isLoadingMovies);
         return (
             <div className="movie-list">
                 {
@@ -32,15 +34,15 @@ class MovieList extends React.Component {
                 }
                 {
                     error && 
-                    <div>{error}</div>
+                    <div className="message">{error}</div>
                 }
                 {
                     movies.length > 0 && movies.length === +totalResults &&
-                    <div>Thats all we have!</div>
+                    <div className="message">Thats all we have!</div>
                 }
                 {
                     isLoadingMovies && 
-                    <div>Loading...</div>
+                    <div className="message">Loading...</div>
                 }
             </div>
         )

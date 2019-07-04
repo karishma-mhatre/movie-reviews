@@ -12,6 +12,7 @@ let movieListState = {
 const movieList = (state = movieListState, action) => {
     switch(action.type) {
         case REQUEST_MOVIES:
+            console.log("req", action);
             if(state.searchString !== action.searchString) {
                 return {
                     ...state,
@@ -58,16 +59,25 @@ const movieDetails = (state = {}, action) => {
             return {
                 ...state,
                 [action.id]: {
-                    isLoadingDetails: true
+                    isLoadingDetails: true, 
+                    MRRating: 0
                 }
             }
         case RECEIVE_MOVIE_DETAILS:
             return {
                 ...state,
                 [action.response.imdbID] : {
+                    ...state[action.response.imdbID],
                     ...action.response,
                     isLoadingDetails: false,
-                    MRRating: 0
+                }
+            }
+        case RATE_MOVIE:
+            return {
+                ...state,
+                [action.id]: {
+                    ...state[action.id],
+                    MRRating: action.rating
                 }
             }
         default:

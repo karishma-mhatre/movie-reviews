@@ -10,9 +10,10 @@
     &:hover {
         transform: scale(1.1);
 
-        .movie-details {
+        .movie-details, .movie-loader {
             display: flex;
         }
+
     }
 
     &-poster {
@@ -31,8 +32,6 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 100%;
-        height: 100%;
         display: none;
         background-color: #000000bd;
         color: $color-white;
@@ -54,7 +53,18 @@
             font-size: $font-size-smallest;
             padding-bottom: 10px;
         }
+    }
 
-
+    &-loader {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        background-color: #000000bd;
+        color: $color-white;
+        justify-content: center;
+        align-items: center;
     }
 }
