@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.rate {
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+
+// .rate:not(:checked) > label {
+//     float:right;
+//     width:1em;
+//     overflow:hidden;
+//     white-space:nowrap;
+//     cursor:pointer;
+//     font-size:20px;
+//     color:#ccc;
+// }
+
+.star {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:20px;
+    color:#ccc;
+}
+
+.star:before {
+    content: '★ ';
+}
+
+// .rate > input:checked ~ label {
+//     color: #ffc700;    
+// }
+
+.rate:not(:checked) > .star:hover,
+.rate:not(:checked) > .star:hover ~ label {
+    color: #deb217;  
+}
+
+.checked {
+    color: $color-yellow;
+}
