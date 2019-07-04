@@ -2,6 +2,7 @@ import React from 'react';
 import debounce from 'lodash.debounce';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions';
+import './search.scss';
 
 class Search extends React.Component {
     handleChange = debounce((e) => {
@@ -12,8 +13,8 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className="search">
-                <input type="text" onChange={(e) => {e.persist();this.handleChange(e)}} placeholder="Searh a movie"></input>
+            <div className="container search">
+                <input className="search-input" type="text" onChange={(e) => {e.persist();this.handleChange(e)}} placeholder="Searh a movie"></input>
             </div>
         )
     }

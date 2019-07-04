@@ -33,7 +33,7 @@ export const rateMovie = (id, rating) => ({
 
 export const fetchMovies = (searchString, pageNumber) => (dispatch) => {
     dispatch(requestMovies(searchString))
-    return fetch(`http://www.omdbapi.com/?s=${searchString}&page=${pageNumber}&apikey=${API_KEY}`)
+    return fetch(`http://www.omdbapi.com/?s=${searchString}&type=movie&page=${pageNumber}&apikey=${API_KEY}`)
     .then(response => response.json())
     .then(json => dispatch(receiveMovies(json)))
 }

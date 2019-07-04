@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+
+.search {
+    background: $color-black;
+    height: 80px;
+    position: sticky;
+    align-items: center;
+    justify-content:center;
+    top: 0;
+    z-index: 9;
+    
+    &-input {
+        padding: 10px;
+        background: $color-black;
+        border: 2px solid $color-white;
+        color: $color-white;
+        font-size: $font-size-large;
+        transition: all 0.5s ease;
+        -webkit-transition: width 0.4s ease-in-out;
+        width: 200px;
+
+    }
+
+    &-input:focus {
+        width: 80%;
+    }
+}

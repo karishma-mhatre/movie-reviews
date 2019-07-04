@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import debounce from 'lodash.debounce';
 import Movie from '../Movie';
 import { fetchMovies } from '../../actions';
+import './movie-list.scss';
 
 class MovieList extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class MovieList extends React.Component {
         let { movies, error, totalResults, isLoadingMovies } = this.props;
         console.log(movies);
         return (
-            <div >
+            <div className="movie-list">
                 {
                     movies.map((movie, index) => {
                         return <Movie key={index} poster={movie.Poster} id={movie.imdbID}></Movie>
