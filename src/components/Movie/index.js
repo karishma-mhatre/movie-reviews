@@ -5,6 +5,7 @@ import Rating from '../Rating';
 import './movie.scss';
 class Movie extends React.Component {
     getDetails = (id) => {
+        // Action fetchMovies is dispatched only if a movie is not already fetched.
         if(!this.props.movie) {
             this.props.dispatch(fetchMovieDetails(id))
         }

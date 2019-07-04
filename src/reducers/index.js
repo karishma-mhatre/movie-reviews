@@ -13,7 +13,6 @@ let movieListState = {
 const movieList = (state = movieListState, action) => {
     switch(action.type) {
         case REQUEST_MOVIES:
-            console.log("req", action);
             if(state.searchString !== action.searchString) {
                 return {
                     ...state,
